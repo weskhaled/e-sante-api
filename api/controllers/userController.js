@@ -1,6 +1,7 @@
-var mongoose = require('mongoose'),
-    User = mongoose.model('Users');
+var mongoose = require('mongoose');
+var User = mongoose.model('Users');
 
+// Users
 exports.list_all_users = function (req, res) {
     User.find({}, function (err, user) {
         if (err)
@@ -8,9 +9,6 @@ exports.list_all_users = function (req, res) {
         res.json(user);
     });
 };
-
-
-
 
 exports.create_a_user = function (req, res) {
     var new_user = new User(req.body);
@@ -21,7 +19,6 @@ exports.create_a_user = function (req, res) {
     });
 };
 
-
 exports.show_a_user = function (req, res) {
     User.findById(req.params.userId, function (err, user) {
         if (err)
@@ -29,7 +26,6 @@ exports.show_a_user = function (req, res) {
         res.json(user);
     });
 };
-
 
 exports.update_a_user = function (req, res) {
     User.findOneAndUpdate({
@@ -43,7 +39,6 @@ exports.update_a_user = function (req, res) {
     });
 };
 
-
 exports.delete_a_user = function (req, res) {
     User.remove({
         _id: req.params.userId
@@ -53,5 +48,13 @@ exports.delete_a_user = function (req, res) {
         res.json({
             message: 'User successfully deleted'
         });
+    });
+};
+
+exports.login_a_user = function (req, res) {
+    User.findOne({email: req.body.email, password: req.body.password}, function (err, user) {
+        if (err)
+            res.send(err);
+        res.json(user);
     });
 };

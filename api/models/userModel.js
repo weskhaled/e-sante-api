@@ -78,28 +78,4 @@ var UserSchema = new Schema({
     }
 });
 
-// blood
-var BloodSchema = new Schema({
-    group: {
-        type: String,
-    },
-    user: {
-        type: String,
-    }
-});
-
-// height
-var HeightSchema = new Schema({
-    height: {
-        type: String,
-    },
-    user: {
-        type: String,
-    }
-});
-
-
-weight
-
 module.exports = mongoose.model('Users', UserSchema);
-module.exports = mongoose.model('Bloods', BloodSchema);
