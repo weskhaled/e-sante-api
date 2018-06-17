@@ -8,6 +8,26 @@ var DiseaseSchema = new Schema({
     },
     user: {
         type: String,
+    },
+    description: {
+        type: String,
+    },
+    in_progress: {
+        type: Boolean,
+    },
+    hereditary: {
+        type: Boolean,
+    },
+    duration: {
+        type: Boolean,
+    },
+    start_date: {
+        type: Date,
+        default: Date.now
+    },
+    end_date: {
+        type: Date,
+        default: Date.now
     }
 });
 

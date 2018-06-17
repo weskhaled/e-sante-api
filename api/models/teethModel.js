@@ -8,6 +8,19 @@ var TeethSchema = new Schema({
     },
     user: {
         type: String,
+    },
+    description: {
+        type: String,
+    },
+    act: {
+        type: String,
+    },
+    dentiste: {
+        type: Boolean,
+    },
+    start_date: {
+        type: Date,
+        default: Date.now
     }
 });
 

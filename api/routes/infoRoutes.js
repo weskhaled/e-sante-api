@@ -35,7 +35,7 @@ module.exports = function (app) {
     app.route('/infos/weights/history')
         .post(info.create_a_weight_history);
 
-    app.route('/infos/weights/history/:userId')
+    app.route('/infos/weights/history/:weightId')
         .get(info.list_all_weights);
 
     app.route('/infos/weights/:userId')
