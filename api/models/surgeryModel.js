@@ -1,9 +1,9 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-// suggery
-var SuggerySchema = new Schema({
-    suggery: {
+// surgery
+var SurgerySchema = new Schema({
+    surgery: {
         type: String,
     },
     user: {
@@ -12,4 +12,4 @@ var SuggerySchema = new Schema({
 });
 
 
-module.exports = mongoose.model('Suggerys', SuggerySchema);
+module.exports = mongoose.model('Surgerys', SurgerySchema);

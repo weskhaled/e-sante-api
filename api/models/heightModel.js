@@ -8,6 +8,10 @@ var HeightSchema = new Schema({
     },
     user: {
         type: String,
+    },
+    date: {
+        type: Date,
+        default: Date.now
     }
 });
 
@@ -15,11 +19,17 @@ var HeightSchema = new Schema({
 var HeightHistorySchema = new Schema({
     height_id: {
         type: String,
+        select: true
     },
     height: {
         type: String,
+        select: true
+    },
+    date: {
+        type: Date,
+        default: Date.now
     }
 });
 
-module.exports = mongoose.model('Heighs', HeightSchema);
+module.exports = mongoose.model('Heigths', HeightSchema);
 module.exports = mongoose.model('HeightHistories', HeightHistorySchema);

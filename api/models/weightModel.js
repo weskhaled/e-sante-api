@@ -8,6 +8,10 @@ var WeightSchema = new Schema({
     },
     user: {
         type: String,
+    },
+    date: {
+        type: Date,
+        default: Date.now
     }
 });
 
@@ -17,6 +21,10 @@ var WeightHistorySchema = new Schema({
     },
     weight_id: {
         type: String,
+    },
+    date: {
+        type: Date,
+        default: Date.now
     }
 });
 
