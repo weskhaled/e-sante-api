@@ -8,6 +8,13 @@ var VaccinationSchema = new Schema({
     },
     user: {
         type: String,
+    },
+    description: {
+        type: String,
+    },
+    start_date: {
+        type: Date,
+        default: Date.now
     }
 });
 

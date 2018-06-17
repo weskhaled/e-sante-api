@@ -22,6 +22,9 @@ module.exports = function (app) {
     app.route('/infos/heights/history/:heightId')
         .get(info.list_all_heights);
 
+    app.route('/infos/heights/history/:heightId')
+        .delete(info.delete_a_height_history);
+
     app.route('/infos/heights/:userId')
         .get(info.show_a_height);
 
@@ -37,6 +40,9 @@ module.exports = function (app) {
 
     app.route('/infos/weights/history/:weightId')
         .get(info.list_all_weights);
+
+    app.route('/infos/weights/history/:weightId')
+        .delete(info.delete_a_weight_history);
 
     app.route('/infos/weights/:userId')
         .get(info.show_a_weight);

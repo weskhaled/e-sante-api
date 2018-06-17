@@ -13,10 +13,14 @@ var TeethSchema = new Schema({
         type: String,
     },
     act: {
-        type: String,
+        type: [{
+            type: String,
+            enum: ['soin', 'extraction']
+        }],
+        default: 'soin'
     },
     dentiste: {
-        type: Boolean,
+        type: String,
     },
     start_date: {
         type: Date,

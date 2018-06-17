@@ -130,3 +130,27 @@ exports.update_a_weight = function (req, res) {
     });
 };
 
+
+exports.delete_a_height_history = function (req, res) {
+    HeightHistories.remove({
+        _id: req.params.heightId
+    }, function (err, height) {
+        if (err)
+            res.send(err);
+        res.json({
+            message: 'Successfully deleted'
+        });
+    });
+};
+
+exports.delete_a_weight_history = function (req, res) {
+    WeightHistories.remove({
+        _id: req.params.weightId
+    }, function (err, weight) {
+        if (err)
+            res.send(err);
+        res.json({
+            message: 'Successfully deleted'
+        });
+    });
+};
