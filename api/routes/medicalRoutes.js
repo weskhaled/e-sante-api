@@ -2,18 +2,38 @@ module.exports = function (app) {
     var medical = require('../controllers/medicalController');
     var cors = require('cors');
 
-    // medical medical Routes
+    // medical Routes
     app.use(cors());
-    
-    app.route('/medical/doctors')
-        .get(medical.list_all_doctors)
-        .post(medical.create_a_doctor);
 
+    //analysis
+    app.route('/medical/analysis/:userId').get(medical.list_all_analysis);
+    app.route('/medical/analysis').post(medical.create_a_analysis);
+    app.route('/medical/analysis/:analysisId')
+        .get(medical.show_a_analysis)
+        .put(medical.update_a_analysis)
+        .delete(medical.delete_a_analysis);
 
-    app.route('/medical/doctors/:doctorId')
+    //consultation
+    app.route('/medical/consultation/:userId').get(medical.list_all_consultation);
+    app.route('/medical/consultation').post(medical.create_a_consultation);
+    app.route('/medical/consultation/:consultationId')
+        .get(medical.show_a_consultation)
+        .put(medical.update_a_consultation)
+        .delete(medical.delete_a_consultation);
+
+    //doctor
+    app.route('/medical/doctor/:userId').get(medical.list_all_doctor);
+    app.route('/medical/doctor').post(medical.create_a_doctor);
+    app.route('/medical/doctor/:doctorId')
         .get(medical.show_a_doctor)
         .put(medical.update_a_doctor)
         .delete(medical.delete_a_doctor);
 
-    // medical blood group Routes
+    //radiology
+    app.route('/medical/radiology/:userId').get(medical.list_all_radiology);
+    app.route('/medical/radiology').post(medical.create_a_radiology);
+    app.route('/medical/radiology/:radiologyId')
+        .get(medical.show_a_radiology)
+        .put(medical.update_a_radiology)
+        .delete(medical.delete_a_radiology);
 };

@@ -8,6 +8,19 @@ var AnalysisSchema = new Schema({
     },
     user: {
         type: String,
+    },
+    doctor: {
+        type: String,
+    },
+    bilan: {
+        type: String,
+    },
+    labo: {
+        type: String,
+    },
+    start_date: {
+        type: Date,
+        default: Date.now
     }
 });
 
